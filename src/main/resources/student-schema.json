@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "\\d+"
+    },
+    "college": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "hno": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "pinCode": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hno",
+        "street",
+        "pinCode",
+        "state"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "address"
+  ]
+}

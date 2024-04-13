@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.codeinvestigator.com/spaceshiprequest.schema.json",
+	"title": "Student Details.",
+	"description": "Student Details Validation.",
+	"type": "object",
+	"definitions": {
+		"properties": {
+			"name": {
+				"type": "string",
+				"maxLength": 32
+			},
+			"email": {
+				"type": "string",
+				"format": "email"
+			},
+			"phone": {
+				"type": "string",
+				"pattern": "\\d+"
+			},
+			"college": {
+				"type": "string",
+				"maxLength": 32
+			},
+			"required": [
+				"name",
+				"email",
+				"address"
+			]
+		},
+		"address": {
+			"type": "object",
+			"properties": {
+				"hno": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string",
+					"maxLength": 32
+				},
+				"pinCode": {
+					"type": "integer",
+					"minimum": 100000,
+					"maximum": 999999
+				},
+				"state": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"hno",
+				"street",
+				"pinCode",
+				"state"
+			]
+		}
+	},
+	"properties": {
+		"passport": {
+			"$ref": "#/definitions/address",
+			"description": "student information"
+		}
+	},
+	"required": [
+		"name",
+		"email",
+		"address"
+	]
+}
